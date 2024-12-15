@@ -26,7 +26,7 @@ Device Motion Handling:
 The application listens for devicemotion events, which provide real-time data about the device's rotation rates around the X, Y, and Z axes.
 The gyroscope data is used to calculate the total rotation of the device by integrating the angular velocity over time.
 
-nimation Loop:
+Animation Loop:
 
 The application includes an animation loop that continuously renders the scene and updates the rotation of the 3D model based on the integrated gyroscope data.
 The rotation values are converted from degrees to radians (as required by Three.js) and applied to the 3D box.
@@ -66,4 +66,24 @@ Displaying the Result:
 The updated rotation is reflected in the 3D model, allowing users to see how their device's orientation changes in real-time.
 
 Usage: Please create a template folder to store the index.html file under the folder that the python file resides.
+
+The index.html file should be run in your mobile device. 
+
+The Device Motion API requires a secure context (HTTPS) to work in most browsers. If you're running your Flask app locally, you might be accessing it via http://. To resolve this, you can:
+
+Use a tunneling service like ngrok to expose your local server over HTTPS. 
+
+Here’s how to do it:
+
+Install ngrok if you haven't already.
+
+Run your Flask app.
+
+In a new terminal, run
+
+ngrok http 5000
+
+Ngrok will provide you with a public HTTPS URL. Use this URL to access your Flask app from your Android device.
+
+
 
